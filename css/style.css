@@ -1,0 +1,76 @@
+#board{
+	position:relative;
+	width:800px;
+	height:800px;
+}
+
+.square{
+	display:inline-block;
+	width:100px;
+	height:100px;
+	position:absolute;
+}
+
+.square:hover {
+	opacity:0.9
+}
+
+.piece{
+	background-image:url("../images/chess_pieces.png");
+	background-size: 586%;
+	height: 100px;
+	width: 100px;
+	position:absolute;
+	opacity:0.8;
+}
+.piece:hover{
+	opacity:1;
+}
+
+/*
+Renk farki = top parametresi, degeri 98px;
+background-position: Xpx 0px beyaz iken Xpx 0px parcasi siyah
+rook => 382
+knight => 285
+bishop => 385
+queen => 96px
+king => 0px
+pawn => 98px
+*/
+div.white[data-piece=Rook]{
+	background-position:-392px 0;
+}
+div.white[data-piece=Knight]{
+	background-position:292px 0;
+}
+div.white[data-piece=Bishop]{
+	background-position:392px 0;
+}
+div.white[data-piece=Queen]{
+	background-position:-96px 0;
+}
+div.white[data-piece=King]{
+	background-position:0px 0;
+}
+div.white[data-piece=Pawn]{
+	background-position:98px 0;
+}
+
+div.black[data-piece=Rook]{
+	background-position:-392px 98px;
+}
+div.black[data-piece=Knight]{
+	background-position:-292px 98px
+}
+div.black[data-piece=Bishop]{
+	background-position:392px 98px
+}
+div.black[data-piece=Queen]{
+	background-position:-96px 98px;
+}
+div.black[data-piece=King]{
+	background-position:0px 98px;
+}
+div.black[data-piece=Pawn]{
+	background-position:98px 98px
+}
