@@ -1,30 +1,38 @@
-#board{
-	position:relative;
-	width:800px;
-	height:800px;
+body {
+	background-color: #161513ca;
 }
 
-.square{
-	display:inline-block;
-	width:100px;
-	height:100px;
-	position:absolute;
+#board {
+	width: 800px;
+	height: 800px;
+	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+}
+
+.square {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	position: absolute;
 }
 
 .square:hover {
-	opacity:0.9
+	opacity: 0.9
 }
 
-.piece{
-	background-image:url("../images/chess_pieces.png");
+.piece {
+	background-image: url("../images/chess_pieces.png");
 	background-size: 586%;
 	height: 100px;
 	width: 100px;
-	position:absolute;
-	opacity:0.8;
+	position: absolute;
+	opacity: 0.8;
 }
-.piece:hover{
-	opacity:1;
+
+.piece:hover {
+	opacity: 1;
 }
 
 /*
@@ -37,40 +45,58 @@ queen => 96px
 king => 0px
 pawn => 98px
 */
-div.white[data-piece=Rook]{
+div.white[data-piece=Rook] {
 	background-position:-392px 0;
 }
-div.white[data-piece=Knight]{
+
+div.white[data-piece=Knight] {
 	background-position:292px 0;
 }
-div.white[data-piece=Bishop]{
+
+div.white[data-piece=Bishop] {
 	background-position:392px 0;
 }
-div.white[data-piece=Queen]{
+
+div.white[data-piece=Queen] {
 	background-position:-96px 0;
 }
-div.white[data-piece=King]{
+
+div.white[data-piece=King] {
 	background-position:0px 0;
 }
-div.white[data-piece=Pawn]{
+
+div.white[data-piece=Pawn] {
 	background-position:98px 0;
 }
 
-div.black[data-piece=Rook]{
+div.black[data-piece=Rook] {
 	background-position:-392px 98px;
 }
-div.black[data-piece=Knight]{
+
+div.black[data-piece=Knight] {
 	background-position:-292px 98px
 }
-div.black[data-piece=Bishop]{
+
+div.black[data-piece=Bishop] {
 	background-position:392px 98px
 }
-div.black[data-piece=Queen]{
+
+div.black[data-piece=Queen] {
 	background-position:-96px 98px;
 }
-div.black[data-piece=King]{
+
+div.black[data-piece=King] {
 	background-position:0px 98px;
 }
-div.black[data-piece=Pawn]{
+
+div.black[data-piece=Pawn] {
 	background-position:98px 98px
+}
+
+.light {
+	background-color: #f4dbb6;
+}
+
+.dark {
+	background-color: #bf8664;
 }

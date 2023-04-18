@@ -1,10 +1,5 @@
-//Beyaz ve siyah karelere ait renkler
-const SQUARE_COLOR1 = "rgba(145,140,125)";
-const SQUARE_COLOR2 = "rgba(180,175,165)";
-
 //Tahtayi sadece cizdiren fonksiyon 8x8 matris
 function drawBoard() {
-    console.log("drawBoard start");
     for(let i = 1; i<=8; i++) {
         for(let j = 1; j<=8; j++) {
             $("#board").append('<div class="square' + '" data-row="' + i + '" data-column="' + j + '"></div>');
@@ -22,36 +17,23 @@ function drawBoard() {
         //divin data-column degeri
         let columnNumber = $(j).data("column");
 
-        if(rowNumber%2) {
-            color1 = SQUARE_COLOR1;
-            color2 = SQUARE_COLOR2;
+        if((rowNumber + columnNumber) %2) {
+            $(j).addClass("dark");
         } else {
-            color2 = SQUARE_COLOR1;
-            color1 = SQUARE_COLOR2
+            $(j).addClass("light");
         }
 
-        if(columnNumber%2) {
-            $(j).css("background-color", color1);
-        } else {
-            $(j).css("background-color", color2);
-        }
-
-        //Boardun soldan ve yukaridan hizasi. Degistirilirse pieceslarin da degeri degistirilmeli.
+        // Boardun soldan ve yukaridan hizasi. Degistirilirse pieceslarin da degeri degistirilmeli.
         $(j).css("left", 100 * (columnNumber -1) + "px");
         $(j).css("top", 100 * (rowNumber - 1) + "px");
-        //TODO: Alt tarafi sil
-        // $(j).text("rowNumber: " + rowNumber + "\n" + "columnNum: " + columnNumber);
         let notationChars = ["a","b","c","d","e","f","g","h"];
         let squareNotation = notationChars[columnNumber-1] + (9-rowNumber);
-        $(j).text(squareNotation); //Remove this
+        $(j).text(squareNotation); // TODO: move notations to left and bottom edges. don't put it squares
 
-    }
-    );
-    console.log("drawBoard end");
+    });
 }
 
 function setPieces() {
-    console.log("setPieces start");
     let black_pawn_columnn_count = 1;
     let white_pawn_columnn_count = 1;
 
@@ -130,7 +112,6 @@ function setPieces() {
             }
         }
     }
-    console.log("setPieces end");
 }
 
 drawBoard();
